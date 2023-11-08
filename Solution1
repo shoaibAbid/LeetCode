@@ -1,0 +1,18 @@
+class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        num_dict = {}  # Create a dictionary to store seen values and their indices
+        
+        for index, num in enumerate(nums):
+            complement = target - num  # Calculate the complement of the current number with the target
+            
+            if complement in num_dict:
+                return [num_dict[complement], index]  # If found, return the indices of the two numbers
+            
+            num_dict[num] = index  # If the complement is not in the dictionary, add the current number to it
+        
+        return []  # If no solution is found, return an empty list or handle it as needed
