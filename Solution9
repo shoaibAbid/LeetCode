@@ -1,0 +1,17 @@
+class Solution(object):
+    def isPalindrome(self, x):
+        # Handle negative numbers
+        if x < 0:
+            return False
+        
+        # Convert the integer to a string
+        string1 = str(x)
+        
+        # Reverse the string
+        string2 = string1[::-1]
+        
+        # Compare the original string with the reversed string
+        if string1 == string2:
+            return True
+        
+        return False
